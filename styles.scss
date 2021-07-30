@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+$bg1-color:#fff;
+$bg2-color: #000;
+$lg-color_1_1: #f3f5f5;
+$lg-color_1_2: #9c27b0;
+$lg-color_2_1:#ff2871;
+$lg-color_2_2: rgba(255,
+40,
+113,
+.2);
+$lgd-color_1_1: #ffc107;
+$lgd-color_1_2: #e91e63;
+$lgd-color_2_1: #2196f3;
+$lgd-color_2_2: #31ff38;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+.sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    &::before {
+        content: '';
+        width: 240px;
+        height: 240px;
+        position: absolute;
+        background: linear-gradient($lg-color_1_1, $lg-color_1_2);
+        border-radius: 50%;
+        transform: translate(-150px, -100px);
+    }
+    &::after {
+        content: '';
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        background: linear-gradient($lg-color_2_1, $lg-color_2_2);
+        border-radius: 50%;
+        transform: translate(150px, 150px);
+    }
+    .box {
+        position: absolute;
+        width: 240px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 1;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(25px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            h3 {
+                color: $lg-color_1_2;
+                font-weight: 500;
+                font-size: 1.2em;
+                letter-spacing: 1px;
+            }
+            .batteryShape {
+                position: relative;
+                width: 140px;
+                height: 65px;
+                margin: 20px 0;
+                border: 3px solid #333;
+                border-radius: 10px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -12px;
+                    width: 7px;
+                    height: 16px;
+                    transform: translateY(-50%);
+                    background: #333;
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    background: rgba(255, 255, 255, 0.1);
+                }
+                .level {
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                    left: 4px;
+                    bottom: 4px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    .parcentage {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 50%;
+                        height: 100%;
+                        background: linear-gradient(90deg, $lg-color_1_2, $lg-color_2_1);
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.parcent {
+    color: #fe3177;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.toggle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+        width: 20px;
+        height: 20px;
+        color: #000;
+        z-index: 2;
+        margin: auto;
+        margin-left: 4px;
+    }
+}
+
+.fa.fa-sun-o {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    margin-top: 2px;
+    margin-left: 2.5px;
+}
+
+.toggle.dark {
+    border: 2px solid #fff;
+}
+
+.sec.dark {
+    background-color: rgb(57, 71, 100);
+    &::before {
+        background: linear-gradient($lgd-color_1_1, $lgd-color_1_2);
+    }
+    &::after {
+        background: linear-gradient($lgd-color_2_1, $lgd-color_2_2);
+    }
+    .content h3 {
+        color: #fff;
+    }
+    .content .batteryShape {
+        border: 3px solid #fff;
+        &::before {
+            background: #fff;
+        }
+        .level .parcentage {
+            background: linear-gradient(90deg, $lgd-color_1_1, $lgd-color_2_2);
+        }
+    }
+    .parcent {
+        color: #fff;
+    }
+}
